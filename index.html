@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Runa 💙</title>
+
+    <!-- গুগল ফন্ট: বাংলা সুন্দর দেখানোর জন্য -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ===== গ্লোবাল রিসেট ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            min-height: 100vh;
+            background: radial-gradient(circle at 20% 30%, #0a0f2a, #1a0f1a, #0d0618);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+            color: #fff;
+        }
+
+        /* ===== অ্যানিমেটেড ব্যাকগ্রাউন্ড ===== */
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 15, 42, 0.7), rgba(26, 15, 26, 0.8));
+            z-index: 0;
+            animation: gradientShift 15s ease infinite;
+            background-size: 400% 400%;
+        }
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ===== ভাসমান হার্ট ও তারা ===== */
+        .floating-hearts,
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .heart-float {
+            position: absolute;
+            bottom: -100px;
+            font-size: 22px;
+            color: rgba(255, 107, 157, 0.7);
+            animation: floatUp linear infinite;
+            text-shadow: 0 0 10px rgba(255, 20, 100, 0.6);
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(720deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite alternate;
+            box-shadow: 0 0 6px #fff;
+        }
+        @keyframes twinkle {
+            0% {
+                opacity: 0.2;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* ===== মেইন কন্টেইনার ===== */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 48px;
+            padding: 40px 30px 50px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 182, 193, 0.15) inset;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        /* ===== শিরোনাম (ইংরেজি + বাংলা) ===== */
+        .title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #fbc2eb);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradText 4s ease infinite;
+            margin-bottom: 8px;
+        }
+        .sub-title {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 15px;
+        }
+        @keyframes gradText {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* ===== চোখের ছবি (Eyes) ===== */
+        .eye-wrapper {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 35px;
+            border-radius: 50%;
+            padding: 8px;
+            background: conic-gradient(from 0deg, #ffb6c1, #87ceeb, #dda0dd, #ffb6c1);
+            animation: spinGlow 8s linear infinite;
+            box-shadow: 0 0 60px rgba(135, 206, 235, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .eye-wrapper:hover {
+            transform: scale(1.05);
+        }
+        @keyframes spinGlow {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .eye-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #0a0f2a;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .eye-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: all 0.5s;
+        }
+        /* ছবির উপর প্লাবিত আলো */
+        .eye-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), transparent 70%);
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            animation: pulseGlow 3s ease-in-out infinite alternate;
+        }
+        @keyframes pulseGlow {
+            0% {
+                opacity: 0.3;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 0.9;
+                transform: scale(1.05);
+            }
+        }
+
+        .click-hint {
+            position: absolute;
+            bottom: -28px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 182, 193, 0.15);
+            backdrop-filter: blur(4px);
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.5);
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* ===== টাইপরাইটার মেসেজ ===== */
+        .message-box {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 28px;
+            padding: 25px 25px 15px;
+            margin: 20px 0 30px;
+            border-left: 3px solid rgba(255, 182, 193, 0.4);
+            border-right: 3px solid rgba(135, 206, 235, 0.2);
+            min-height: 200px;
+            text-align: left;
+        }
+        #typewriter {
+            font-size: 1.1rem;
+            line-height: 2rem;
+            font-weight: 400;
+            color: rgba(255, 255, 240, 0.92);
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        #typewriter .line-break {
+            display: block;
+            margin-bottom: 6px;
+        }
+        #typewriter .highlight {
+            color: #fbc2eb;
+            font-weight: 600;
+            text-shadow: 0 0 20px rgba(251, 194, 235, 0.3);
+        }
+        .cursor-blink {
+            display: inline-block;
+            width: 3px;
+            height: 1.2rem;
+            background: #fbc2eb;
+            margin-left: 4px;
+            vertical-align: text-bottom;
+            animation: blink 0.8s step-end infinite;
+        }
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* ===== মিউজিক প্লেয়ার বাটন ===== */
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 60px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.4s;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+        .music-control:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #fbc2eb;
+            transform: scale(1.05);
+        }
+        .music-control .icon {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+        .music-control .label {
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        .music-control .status {
+            font-size: 0.7rem;
+            opacity: 0.6;
+        }
+
+        /* ===== হার্ট এক্সপ্লোশন (ক্লিক করলে) ===== */
+        .explosion-heart {
+            position: fixed;
+            pointer-events: none;
+            font-size: 2rem;
+            z-index: 9999;
+            animation: explode 1.2s ease-out forwards;
+        }
+        @keyframes explode {
+            0% {
+                transform: translate(0, 0) scale(0.5) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(1.8) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ===== রেস্পন্সিভ ===== */
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 16px 35px;
+                border-radius: 32px;
+            }
+            .title {
+                font-size: 1.8rem;
+            }
+            .eye-wrapper {
+                width: 150px;
+                height: 150px;
+            }
+            #typewriter {
+                font-size: 0.95rem;
+                line-height: 1.8rem;
+            }
+            .music-control {
+                bottom: 16px;
+                right: 16px;
+                padding: 8px 14px;
+                font-size: 0.75rem;
+            }
+            .music-control .icon {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* স্ক্রলবার স্টাইল */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0f2a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fbc2eb;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== ব্যাকগ্রাউন্ড ওভারলে ===== -->
+    <div class="bg-overlay"></div>
+
+    <!-- ===== ভাসমান তারা ===== -->
+    <div class="stars" id="stars"></div>
+
+    <!-- ===== ভাসমান হার্ট ===== -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- ===== মিউজিক কন্ট্রোল (Yung Kai - Blue) ===== -->
+    <div class="music-control" id="musicToggle">
+        <span class="icon">🎵</span>
+        <span class="label">Yung Kai - Blue</span>
+        <span class="status" id="musicStatus">⏸️ Paused</span>
+    </div>
+
+    <!-- ===== মেইন কন্টেইনার ===== -->
+    <div class="container">
+
+        <!-- শিরোনাম -->
+        <div class="title">✨ For My Runa ✨</div>
+        <div class="sub-title">💙 তোমার চোখে আমার পৃথিবী 💙</div>
+
+        <!-- চোখের ছবি -->
+        <div class="eye-wrapper" id="eyeWrapper">
+            <div class="eye-inner">
+                <img src="eyes.png" alt="Runa's Eyes" id="eyeImage" />
+                <div class="eye-glow"></div>
+            </div>
+            <div class="click-hint">👆 ক্লিক করো (হার্ট বৃষ্টি)</div>
+        </div>
+
+        <!-- টাইপরাইটার মেসেজ বক্স -->
+        <div class="message-box">
+            <div id="typewriter"></div>
+        </div>
+
+        <!-- ছোট ফুটার -->
+        <div style="font-size:0.75rem; opacity:0.3; letter-spacing:2px; margin-top:10px;">
+            ❤️ ∞ ❤️
+        </div>
+    </div>
+
+    <!-- ===== ইউটিউব অডিও (হিডেন) ===== -->
+    <div id="youtubePlayer" style="display:none;">
+        <iframe id="audioIframe" width="0" height="0" src="https://www.youtube.com/embed/3nQNiWdeH2Q?enablejsapi=1&autoplay=0&mute=0&loop=1&playlist=3nQNiWdeH2Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // ==========================================================
+        //  ১. ভাসমান হার্ট জেনারেটর
+        // ==========================================================
+        function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            const emojis = ['❤️', '💙', '💕', '💖', '✨', '🌹'];
+            for (let i = 0; i < 35; i++) {
+                const span = document.createElement('span');
+                span.className = 'heart-float';
+                span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                span.style.left = Math.random() * 100 + '%';
+                span.style.fontSize = (Math.random() * 20 + 14) + 'px';
+                span.style.animationDuration = (Math.random() * 15 + 12) + 's';
+                span.style.animationDelay = (Math.random() * 18) + 's';
+                container.appendChild(span);
+            }
+        }
+        createFloatingHearts();
+
+        // ==========================================================
+        //  ২. তারা জেনারেটর
+        // ==========================================================
+        function createStars() {
+            const container = document.getElementById('stars');
+            for (let i = 0; i < 70; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = (Math.random() * 5) + 's';
+                star.style.width = star.style.height = (Math.random() * 3 + 1) + 'px';
+                container.appendChild(star);
+            }
+        }
+        createStars();
+
+        // ==========================================================
+        //  ৩. টাইপরাইটার ইফেক্ট (আপনার লেখা কবিতা)
+        // ==========================================================
+        const poemLines = [
+            "তোমার চোখ এত মায়াবি কেন?",
+            "আমি তোমার চোখের দিকে তাকিয়ে অনন্তকাল পাড়ি দিতে পারব।",
+            "",
+            "|  নেশা  |",
+            "",
+            "নেশা মানুষের কত ধরণেরই না হয়;",
+            "কারো টাকার নেশা, কারো জুয়া, কারো নারী।",
+            "অথচ দেখ, আমার নেশা তোমায় দেখা। শুধুই তোমায় দেখা!",
+            "ছোঁয়ার নেই, পাওয়ার'ও নেই।",
+            "কারণ– আমি জানি তুমি আমার নও।",
+            "হ্যামিলনের বাঁশির সুরের মতো তোমার চোখ যখন যেভাবে আমায় পাগল করে,",
+            "মন তক্ষুনি বলে, মানুষ এত মায়াবী হয় কিভাবে?",
+            "",
+            "যদি প্রশ্ন করো সৌন্দর্যের সংজ্ঞা?",
+            "আমি নিশ্চয়ই বলব তোমার কাজলরাঙা চোখ,",
+            "পৃথিবীর সবচেয়ে সুন্দর দৃশ্য?",
+            "আমি দ্বিধা ছাড়াই বলে দিবো তোমার ঠোঁটের কোণে খেলতে থাকা হাসি!",
+            "যদি প্রশ্ন করো নিরাপদ আশ্রয়?",
+            "আমি নম্র চোখে তাকিয়ে বলব, তোমার বুক৷"
+        ];
+
+        let lineIndex = 0;
+        let charIndex = 0;
+        let isTypingComplete = false;
+        const typewriterElement = document.getElementById('typewriter');
+
+        function typeNextChar() {
+            if (lineIndex >= poemLines.length) {
+                isTypingComplete = true;
+                // কার্সর ব্লিংক রেখে দেই
+                return;
+            }
+
+            const currentLine = poemLines[lineIndex];
+            if (charIndex < currentLine.length) {
+                // লাইনের অক্ষর যোগ করি
+                const char = currentLine.charAt(charIndex);
+                if (charIndex === 0) {
+                    // নতুন লাইন স্প্যানে শুরু
+                    const span = document.createElement('span');
+                    span.className = 'line-break';
+                    span.textContent = char;
+                    typewriterElement.appendChild(span);
+                } else {
+                    const lastChild = typewriterElement.lastChild;
+                    if (lastChild) {
+                        lastChild.textContent += char;
+                    }
+                }
+                charIndex++;
+                setTimeout(typeNextChar, 35); // টাইপ স্পিড
+            } else {
+                // লাইন শেষ, পরের লাইনে যাই
+                lineIndex++;
+                charIndex = 0;
+                // খালি লাইন হলে ব্রেক যোগ করি
+                if (lineIndex < poemLines.length && poemLines[lineIndex] === '') {
+                    const br = document.createElement('span');
+                    br.className = 'line-break';
+                    br.textContent = '\u00A0'; // স্পেস
+                    typewriterElement.appendChild(br);
+                    lineIndex++;
+                }
+                setTimeout(typeNextChar, 300); // লাইন ব্রেকের বিরতি
+            }
+        }
+
+        // পেইজ লোড হলে টাইপিং শুরু
+        window.addEventListener('load', () => {
+            setTimeout(typeNextChar, 800);
+        });
+
+        // ==========================================================
+        //  ৪. হার্ট এক্সপ্লোশন (চোখে ক্লিক করলে)
+        // ==========================================================
+        function createHeartExplosion(x, y) {
+            const emojis = ['❤️', '💙', '💖', '💕', '✨', '💗', '♥️'];
+            const count = 30;
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'explosion-heart';
+                heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                const angle = Math.random() * 2 * Math.PI;
+                const distance = 80 + Math.random() * 180;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance - 80;
+                heart.style.left = (x - 16) + 'px';
+                heart.style.top = (y - 16) + 'px';
+                heart.style.setProperty('--tx', tx + 'px');
+                heart.style.setProperty('--ty', ty + 'px');
+                heart.style.fontSize = (Math.random() * 28 + 16) + 'px';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 1300);
+            }
+        }
+
+        document.getElementById('eyeWrapper').addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            createHeartExplosion(cx, cy);
+            // ছবিতে ছোট অ্যানিমেশন
+            const img = document.getElementById('eyeImage');
+            img.style.transform = 'scale(0.92)';
+            setTimeout(() => img.style.transform = 'scale(1)', 200);
+        });
+
+        // ==========================================================
+        //  ৫. মিউজিক কন্ট্রোল (Yung Kai - Blue)
+        // ==========================================================
+        let isMusicPlaying = false;
+        const musicToggle = document.getElementById('musicToggle');
+        const musicStatus = document.getElementById('musicStatus');
+        const iframe = document.getElementById('audioIframe');
+
+        musicToggle.addEventListener('click', function() {
+            if (!isMusicPlaying) {
+                // যদি iframe না থাকে তাহলে তৈরি করি
+                if (!document.getElementById('audioIframe')) {
+                    const div = document.createElement('div');
+                    div.id = 'youtubePlayer';
+                    div.style.display = 'none';
+                    div.innerHTML =
+                        `<iframe id="audioIframe" width="0" height="0" src="https://www.youtube.com/embed/3nQNiWdeH2Q?enablejsapi=1&autoplay=1&mute=0&loop=1&playlist=3nQNiWdeH2Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+                    document.body.appendChild(div);
+                } else {
+                    // আপডেট সোর্স
+                    const iframeEl = document.getElementById('audioIframe');
+                    iframeEl.src = 'https://www.youtube.com/embed/3nQNiWdeH2Q?enablejsapi=1&autoplay=1&mute=0&loop=1&playlist=3nQNiWdeH2Q';
+                }
+                isMusicPlaying = true;
+                musicStatus.textContent = '▶️ Playing';
+                musicToggle.querySelector('.icon').textContent = '🎶';
+            } else {
+                // পজ/স্টপ - iframe সরিয়ে ফেলা বা সোর্স খালি করা
+                const iframeEl = document.getElementById('audioIframe');
+                if (iframeEl) {
+                    iframeEl.src = '';
+                }
+                isMusicPlaying = false;
+                musicStatus.textContent = '⏸️ Paused';
+                musicToggle.querySelector('.icon').textContent = '🎵';
+            }
+        });
+
+        // ==========================================================
+        //  ৬. ব্রাউজার অটোপ্লে পলিসি হ্যান্ডেল (ইউজার ইন্টারঅ্যাকশন)
+        // ==========================================================
+        // প্রথম ক্লিকে মিউজিক চালু করতে ইউজারকে অনুরোধ করি (পপ-আপ নয়, বাটনেই)
+        document.addEventListener('click', function firstClick() {
+            // যদি মিউজিক না বাজে এবং iframe না থাকে, তাহলে একটা হিন্ট দেই
+            if (!isMusicPlaying && !document.getElementById('audioIframe')) {
+                // কোনো কিছু করি না, ইউজার নিজেই বাটন ক্লিক করবে
+            }
+            document.removeEventListener('click', firstClick);
+        }, { once: true });
+
+        console.log('💙 Website for Runa is ready! 💙');
+    </script>
+
+</body>
+</html>
