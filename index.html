@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>For My Runa 💙</title>
+    <title>💖 Love You, Runaa 💖</title>
 
     <!-- গুগল ফন্ট: বাংলা সুন্দর দেখানোর জন্য -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -131,7 +131,7 @@
 
         /* ===== শিরোনাম (ইংরেজি + বাংলা) ===== */
         .title {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             font-weight: 700;
             letter-spacing: 2px;
             background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #fbc2eb);
@@ -253,6 +253,8 @@
             border-left: 3px solid rgba(255, 182, 193, 0.4);
             border-right: 3px solid rgba(135, 206, 235, 0.2);
             min-height: 200px;
+            max-height: 550px;
+            overflow-y: auto;
             text-align: left;
         }
         #typewriter {
@@ -272,6 +274,11 @@
             font-weight: 600;
             text-shadow: 0 0 20px rgba(251, 194, 235, 0.3);
         }
+        #typewriter .love-highlight {
+            color: #ff7eb3;
+            font-weight: 700;
+            text-shadow: 0 0 25px rgba(255, 107, 157, 0.5);
+        }
         .cursor-blink {
             display: inline-block;
             width: 3px;
@@ -289,44 +296,6 @@
             50% {
                 opacity: 0;
             }
-        }
-
-        /* ===== মিউজিক প্লেয়ার বাটন ===== */
-        .music-control {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 999;
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 60px;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: #fff;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: 0.4s;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-        }
-        .music-control:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: #fbc2eb;
-            transform: scale(1.05);
-        }
-        .music-control .icon {
-            font-size: 1.6rem;
-            line-height: 1;
-        }
-        .music-control .label {
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-        .music-control .status {
-            font-size: 0.7rem;
-            opacity: 0.6;
         }
 
         /* ===== হার্ট এক্সপ্লোশন (ক্লিক করলে) ===== */
@@ -355,7 +324,7 @@
                 border-radius: 32px;
             }
             .title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             .eye-wrapper {
                 width: 150px;
@@ -365,14 +334,8 @@
                 font-size: 0.95rem;
                 line-height: 1.8rem;
             }
-            .music-control {
-                bottom: 16px;
-                right: 16px;
-                padding: 8px 14px;
-                font-size: 0.75rem;
-            }
-            .music-control .icon {
-                font-size: 1.2rem;
+            .message-box {
+                max-height: 400px;
             }
         }
 
@@ -400,19 +363,12 @@
     <!-- ===== ভাসমান হার্ট ===== -->
     <div class="floating-hearts" id="floatingHearts"></div>
 
-    <!-- ===== মিউজিক কন্ট্রোল (Yung Kai - Blue) ===== -->
-    <div class="music-control" id="musicToggle">
-        <span class="icon">🎵</span>
-        <span class="label">Yung Kai - Blue</span>
-        <span class="status" id="musicStatus">⏸️ Paused</span>
-    </div>
-
     <!-- ===== মেইন কন্টেইনার ===== -->
     <div class="container">
 
         <!-- শিরোনাম -->
-        <div class="title">✨ For My Runa ✨</div>
-        <div class="sub-title">💙 তোমার চোখে আমার পৃথিবী 💙</div>
+        <div class="title">💖 Love You, Runaa 💖</div>
+        <div class="sub-title">♾️ তোমার চোখে আমার অনন্তকাল ♾️</div>
 
         <!-- চোখের ছবি -->
         <div class="eye-wrapper" id="eyeWrapper">
@@ -434,24 +390,19 @@
         </div>
     </div>
 
-    <!-- ===== ইউটিউব অডিও (হিডেন) ===== -->
-    <div id="youtubePlayer" style="display:none;">
-        <iframe id="audioIframe" width="0" height="0" src="https://www.youtube.com/embed/3nQNiWdeH2Q?enablejsapi=1&autoplay=0&mute=0&loop=1&playlist=3nQNiWdeH2Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-
     <script>
         // ==========================================================
         //  ১. ভাসমান হার্ট জেনারেটর
         // ==========================================================
         function createFloatingHearts() {
             const container = document.getElementById('floatingHearts');
-            const emojis = ['❤️', '💙', '💕', '💖', '✨', '🌹'];
-            for (let i = 0; i < 35; i++) {
+            const emojis = ['❤️', '💙', '💕', '💖', '✨', '🌹', '💗'];
+            for (let i = 0; i < 40; i++) {
                 const span = document.createElement('span');
                 span.className = 'heart-float';
                 span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
                 span.style.left = Math.random() * 100 + '%';
-                span.style.fontSize = (Math.random() * 20 + 14) + 'px';
+                span.style.fontSize = (Math.random() * 22 + 14) + 'px';
                 span.style.animationDuration = (Math.random() * 15 + 12) + 's';
                 span.style.animationDelay = (Math.random() * 18) + 's';
                 container.appendChild(span);
@@ -464,7 +415,7 @@
         // ==========================================================
         function createStars() {
             const container = document.getElementById('stars');
-            for (let i = 0; i < 70; i++) {
+            for (let i = 0; i < 80; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
                 star.style.left = Math.random() * 100 + '%';
@@ -477,9 +428,10 @@
         createStars();
 
         // ==========================================================
-        //  ৩. টাইপরাইটার ইফেক্ট (আপনার লেখা কবিতা)
+        //  ৩. টাইপরাইটার ইফেক্ট (আপনার লেখা + বাড়তি ভালোবাসার কথা)
         // ==========================================================
         const poemLines = [
+            // ---- আপনার দেওয়া আসল কবিতা ----
             "তোমার চোখ এত মায়াবি কেন?",
             "আমি তোমার চোখের দিকে তাকিয়ে অনন্তকাল পাড়ি দিতে পারব।",
             "",
@@ -498,29 +450,53 @@
             "পৃথিবীর সবচেয়ে সুন্দর দৃশ্য?",
             "আমি দ্বিধা ছাড়াই বলে দিবো তোমার ঠোঁটের কোণে খেলতে থাকা হাসি!",
             "যদি প্রশ্ন করো নিরাপদ আশ্রয়?",
-            "আমি নম্র চোখে তাকিয়ে বলব, তোমার বুক৷"
+            "আমি নম্র চোখে তাকিয়ে বলব, তোমার বুক৷",
+            "",
+            // ---- বাড়তি ভালোবাসার কথা (এখান থেকে নতুন যোগ) ----
+            "―  আরও কিছু কথা  ―",
+            "",
+            "তুমি আমার জীবনের সব, আমার প্রথম প্রেম, আমার শেষ ভালোবাসা।",
+            "তোমার হাসি আমার দিনের আলো, তোমার চোখ আমার রাতের তারা।",
+            "I love you more than all the stars in the sky, Runa.",
+            "তোমার জন্য প্রতিদিন বসন্ত, তোমার জন্য প্রতি রাত পূর্ণিমা।",
+            "ভালোবাসা বলতে যা বুঝি, তা তুমি। শুধু তুমি।",
+            "তোমার কথা ভাবলে বুকের ভেতর এক অদ্ভুত শান্তি খেলে যায়।",
+            "তুমি না থাকলে আমি হয়তো হারিয়ে যেতাম অন্ধকারে।",
+            "তুমি আমার শক্তি, আমার ঠিকানা, আমার আবাস।",
+            "Love you, Runa. Always and forever.",
+            "আমার পৃথিবী তুমি, আমার আকাশ তুমি, আমার নিঃশ্বাস তুমি।",
+            "তোমাকে পেয়েই আমি সম্পূর্ণ। তুমিই আমার সব। ❤️",
+            "",
+            "―  শুধু তুমি  ―",
+            "তুমি আমার স্বপ্ন, তুমি আমার বাস্তব।",
+            "তোমার প্রতিটি তাকানো যেন এক টুকরো কবিতা।",
+            "আমার শেষ নিঃশ্বাস পর্যন্ত শুধু তোমার নাম থাকবে।",
+            "I'll keep loving you, Runa. Today, tomorrow, and forever."
         ];
 
         let lineIndex = 0;
         let charIndex = 0;
-        let isTypingComplete = false;
         const typewriterElement = document.getElementById('typewriter');
 
         function typeNextChar() {
             if (lineIndex >= poemLines.length) {
-                isTypingComplete = true;
-                // কার্সর ব্লিংক রেখে দেই
+                // টাইপ শেষ হলে আর কিছু করি না, কার্সর ব্লিংক থাকবে
                 return;
             }
 
             const currentLine = poemLines[lineIndex];
             if (charIndex < currentLine.length) {
-                // লাইনের অক্ষর যোগ করি
                 const char = currentLine.charAt(charIndex);
                 if (charIndex === 0) {
-                    // নতুন লাইন স্প্যানে শুরু
                     const span = document.createElement('span');
                     span.className = 'line-break';
+                    // বিশেষ কিছু লাইন হাইলাইট করি
+                    if (currentLine.includes("তুমি আমার জীবনের সব") || currentLine.includes("Love you, Runa") || currentLine
+                        .includes("তুমিই আমার সব")) {
+                        span.className = 'line-break love-highlight';
+                    } else if (currentLine.includes("―")) {
+                        span.className = 'line-break highlight';
+                    }
                     span.textContent = char;
                     typewriterElement.appendChild(span);
                 } else {
@@ -530,7 +506,9 @@
                     }
                 }
                 charIndex++;
-                setTimeout(typeNextChar, 35); // টাইপ স্পিড
+                // এলোমেলো টাইপ স্পিড (প্রাকৃতিক লাগবে)
+                const speed = Math.random() * 25 + 25;
+                setTimeout(typeNextChar, speed);
             } else {
                 // লাইন শেষ, পরের লাইনে যাই
                 lineIndex++;
@@ -539,38 +517,38 @@
                 if (lineIndex < poemLines.length && poemLines[lineIndex] === '') {
                     const br = document.createElement('span');
                     br.className = 'line-break';
-                    br.textContent = '\u00A0'; // স্পেস
+                    br.textContent = '\u00A0';
                     typewriterElement.appendChild(br);
                     lineIndex++;
                 }
-                setTimeout(typeNextChar, 300); // লাইন ব্রেকের বিরতি
+                setTimeout(typeNextChar, 400);
             }
         }
 
         // পেইজ লোড হলে টাইপিং শুরু
         window.addEventListener('load', () => {
-            setTimeout(typeNextChar, 800);
+            setTimeout(typeNextChar, 600);
         });
 
         // ==========================================================
         //  ৪. হার্ট এক্সপ্লোশন (চোখে ক্লিক করলে)
         // ==========================================================
         function createHeartExplosion(x, y) {
-            const emojis = ['❤️', '💙', '💖', '💕', '✨', '💗', '♥️'];
-            const count = 30;
+            const emojis = ['❤️', '💙', '💖', '💕', '✨', '💗', '♥️', '🌹'];
+            const count = 35;
             for (let i = 0; i < count; i++) {
                 const heart = document.createElement('div');
                 heart.className = 'explosion-heart';
                 heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
                 const angle = Math.random() * 2 * Math.PI;
-                const distance = 80 + Math.random() * 180;
+                const distance = 80 + Math.random() * 200;
                 const tx = Math.cos(angle) * distance;
                 const ty = Math.sin(angle) * distance - 80;
                 heart.style.left = (x - 16) + 'px';
                 heart.style.top = (y - 16) + 'px';
                 heart.style.setProperty('--tx', tx + 'px');
                 heart.style.setProperty('--ty', ty + 'px');
-                heart.style.fontSize = (Math.random() * 28 + 16) + 'px';
+                heart.style.fontSize = (Math.random() * 30 + 16) + 'px';
                 document.body.appendChild(heart);
                 setTimeout(() => heart.remove(), 1300);
             }
@@ -583,61 +561,11 @@
             createHeartExplosion(cx, cy);
             // ছবিতে ছোট অ্যানিমেশন
             const img = document.getElementById('eyeImage');
-            img.style.transform = 'scale(0.92)';
-            setTimeout(() => img.style.transform = 'scale(1)', 200);
+            img.style.transform = 'scale(0.90)';
+            setTimeout(() => img.style.transform = 'scale(1)', 250);
         });
 
-        // ==========================================================
-        //  ৫. মিউজিক কন্ট্রোল (Yung Kai - Blue)
-        // ==========================================================
-        let isMusicPlaying = false;
-        const musicToggle = document.getElementById('musicToggle');
-        const musicStatus = document.getElementById('musicStatus');
-        const iframe = document.getElementById('audioIframe');
-
-        musicToggle.addEventListener('click', function() {
-            if (!isMusicPlaying) {
-                // যদি iframe না থাকে তাহলে তৈরি করি
-                if (!document.getElementById('audioIframe')) {
-                    const div = document.createElement('div');
-                    div.id = 'youtubePlayer';
-                    div.style.display = 'none';
-                    div.innerHTML =
-                        `<iframe id="audioIframe" width="0" height="0" src="https://www.youtube.com/embed/3nQNiWdeH2Q?enablejsapi=1&autoplay=1&mute=0&loop=1&playlist=3nQNiWdeH2Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-                    document.body.appendChild(div);
-                } else {
-                    // আপডেট সোর্স
-                    const iframeEl = document.getElementById('audioIframe');
-                    iframeEl.src = 'https://www.youtube.com/embed/3nQNiWdeH2Q?enablejsapi=1&autoplay=1&mute=0&loop=1&playlist=3nQNiWdeH2Q';
-                }
-                isMusicPlaying = true;
-                musicStatus.textContent = '▶️ Playing';
-                musicToggle.querySelector('.icon').textContent = '🎶';
-            } else {
-                // পজ/স্টপ - iframe সরিয়ে ফেলা বা সোর্স খালি করা
-                const iframeEl = document.getElementById('audioIframe');
-                if (iframeEl) {
-                    iframeEl.src = '';
-                }
-                isMusicPlaying = false;
-                musicStatus.textContent = '⏸️ Paused';
-                musicToggle.querySelector('.icon').textContent = '🎵';
-            }
-        });
-
-        // ==========================================================
-        //  ৬. ব্রাউজার অটোপ্লে পলিসি হ্যান্ডেল (ইউজার ইন্টারঅ্যাকশন)
-        // ==========================================================
-        // প্রথম ক্লিকে মিউজিক চালু করতে ইউজারকে অনুরোধ করি (পপ-আপ নয়, বাটনেই)
-        document.addEventListener('click', function firstClick() {
-            // যদি মিউজিক না বাজে এবং iframe না থাকে, তাহলে একটা হিন্ট দেই
-            if (!isMusicPlaying && !document.getElementById('audioIframe')) {
-                // কোনো কিছু করি না, ইউজার নিজেই বাটন ক্লিক করবে
-            }
-            document.removeEventListener('click', firstClick);
-        }, { once: true });
-
-        console.log('💙 Website for Runa is ready! 💙');
+        console.log('💖 Love You, Runaa! 💖');
     </script>
 
 </body>
