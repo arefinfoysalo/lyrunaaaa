@@ -1,572 +1,1262 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>💖 Love You, Runaa 💖</title>
-
-    <!-- গুগল ফন্ট: বাংলা সুন্দর দেখানোর জন্য -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My love for Rukaiya tabassum runa </title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700;800&family=Tiro+Bangla:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* ===== গ্লোবাল রিসেট ===== */
+        :root {
+            --bg: #0d0a0b;
+            --bg2: #1a1115;
+            --gold: #d4a574;
+            --gold-light: #e8c9a0;
+            --rose: #c75b6e;
+            --rose-dark: #9b3d4e;
+            --rose-light: #f0a0ae;
+            --cream: #fdf0e8;
+            --card-bg: #1e1519;
+            --card-border: #2a1d23;
+            --text: #e8d5d0;
+            --text-light: #c4b0a8;
+            --text-dark: #f5ece6;
+            --accent1: #e07b8c;
+            --accent2: #d4956b;
+            --glass: rgba(30, 21, 25, 0.75);
+            --glass-border: rgba(212, 167, 116, 0.25);
+            --shadow-gold: 0 0 60px rgba(212, 167, 116, 0.12);
+            --shadow-rose: 0 0 40px rgba(199, 91, 110, 0.15);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Hind Siliguri', sans-serif;
-            min-height: 100vh;
-            background: radial-gradient(circle at 20% 30%, #0a0f2a, #1a0f1a, #0d0618);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow-x: hidden;
-            position: relative;
-            color: #fff;
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #c75b6e #1a1115;
         }
-
-        /* ===== অ্যানিমেটেড ব্যাকগ্রাউন্ড ===== */
-        .bg-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(10, 15, 42, 0.7), rgba(26, 15, 26, 0.8));
-            z-index: 0;
-            animation: gradientShift 15s ease infinite;
-            background-size: 400% 400%;
-        }
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* ===== ভাসমান হার্ট ও তারা ===== */
-        .floating-hearts,
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .heart-float {
-            position: absolute;
-            bottom: -100px;
-            font-size: 22px;
-            color: rgba(255, 107, 157, 0.7);
-            animation: floatUp linear infinite;
-            text-shadow: 0 0 10px rgba(255, 20, 100, 0.6);
-        }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0) rotate(0deg) scale(0.8);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-110vh) rotate(720deg) scale(1.2);
-                opacity: 0;
-            }
-        }
-
-        .star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: #fff;
-            border-radius: 50%;
-            animation: twinkle 3s ease-in-out infinite alternate;
-            box-shadow: 0 0 6px #fff;
-        }
-        @keyframes twinkle {
-            0% {
-                opacity: 0.2;
-                transform: scale(0.5);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1.2);
-            }
-        }
-
-        /* ===== মেইন কন্টেইনার ===== */
-        .container {
-            position: relative;
-            z-index: 10;
-            max-width: 850px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 48px;
-            padding: 40px 30px 50px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 182, 193, 0.15) inset;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        /* ===== শিরোনাম (ইংরেজি + বাংলা) ===== */
-        .title {
-            font-size: 2.6rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #fbc2eb);
-            background-size: 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradText 4s ease infinite;
-            margin-bottom: 8px;
-        }
-        .sub-title {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 300;
-            letter-spacing: 4px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 15px;
-        }
-        @keyframes gradText {
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        /* ===== চোখের ছবি (Eyes) ===== */
-        .eye-wrapper {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 35px;
-            border-radius: 50%;
-            padding: 8px;
-            background: conic-gradient(from 0deg, #ffb6c1, #87ceeb, #dda0dd, #ffb6c1);
-            animation: spinGlow 8s linear infinite;
-            box-shadow: 0 0 60px rgba(135, 206, 235, 0.3);
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        .eye-wrapper:hover {
-            transform: scale(1.05);
-        }
-        @keyframes spinGlow {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .eye-inner {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid #0a0f2a;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        .eye-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: all 0.5s;
-        }
-        /* ছবির উপর প্লাবিত আলো */
-        .eye-glow {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), transparent 70%);
-            mix-blend-mode: overlay;
-            pointer-events: none;
-            animation: pulseGlow 3s ease-in-out infinite alternate;
-        }
-        @keyframes pulseGlow {
-            0% {
-                opacity: 0.3;
-                transform: scale(0.95);
-            }
-            100% {
-                opacity: 0.9;
-                transform: scale(1.05);
-            }
-        }
-
-        .click-hint {
-            position: absolute;
-            bottom: -28px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 182, 193, 0.15);
-            backdrop-filter: blur(4px);
-            padding: 4px 16px;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            color: rgba(255, 255, 255, 0.5);
-            white-space: nowrap;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* ===== টাইপরাইটার মেসেজ ===== */
-        .message-box {
-            background: rgba(0, 0, 0, 0.25);
-            border-radius: 28px;
-            padding: 25px 25px 15px;
-            margin: 20px 0 30px;
-            border-left: 3px solid rgba(255, 182, 193, 0.4);
-            border-right: 3px solid rgba(135, 206, 235, 0.2);
-            min-height: 200px;
-            max-height: 550px;
-            overflow-y: auto;
-            text-align: left;
-        }
-        #typewriter {
-            font-size: 1.1rem;
-            line-height: 2rem;
-            font-weight: 400;
-            color: rgba(255, 255, 240, 0.92);
-            white-space: pre-wrap;
-            word-break: break-word;
-        }
-        #typewriter .line-break {
-            display: block;
-            margin-bottom: 6px;
-        }
-        #typewriter .highlight {
-            color: #fbc2eb;
-            font-weight: 600;
-            text-shadow: 0 0 20px rgba(251, 194, 235, 0.3);
-        }
-        #typewriter .love-highlight {
-            color: #ff7eb3;
-            font-weight: 700;
-            text-shadow: 0 0 25px rgba(255, 107, 157, 0.5);
-        }
-        .cursor-blink {
-            display: inline-block;
-            width: 3px;
-            height: 1.2rem;
-            background: #fbc2eb;
-            margin-left: 4px;
-            vertical-align: text-bottom;
-            animation: blink 0.8s step-end infinite;
-        }
-        @keyframes blink {
-            0%,
-            100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
-        }
-
-        /* ===== হার্ট এক্সপ্লোশন (ক্লিক করলে) ===== */
-        .explosion-heart {
-            position: fixed;
-            pointer-events: none;
-            font-size: 2rem;
-            z-index: 9999;
-            animation: explode 1.2s ease-out forwards;
-        }
-        @keyframes explode {
-            0% {
-                transform: translate(0, 0) scale(0.5) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(var(--tx), var(--ty)) scale(1.8) rotate(720deg);
-                opacity: 0;
-            }
-        }
-
-        /* ===== রেস্পন্সিভ ===== */
-        @media (max-width: 600px) {
-            .container {
-                padding: 25px 16px 35px;
-                border-radius: 32px;
-            }
-            .title {
-                font-size: 2rem;
-            }
-            .eye-wrapper {
-                width: 150px;
-                height: 150px;
-            }
-            #typewriter {
-                font-size: 0.95rem;
-                line-height: 1.8rem;
-            }
-            .message-box {
-                max-height: 400px;
-            }
-        }
-
-        /* স্ক্রলবার স্টাইল */
         ::-webkit-scrollbar {
-            width: 4px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #0a0f2a;
+            background: #1a1115;
         }
         ::-webkit-scrollbar-thumb {
-            background: #fbc2eb;
+            background: linear-gradient(180deg, #c75b6e, #d4a574);
             border-radius: 10px;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            cursor: default;
+        }
+
+        /* ========== CANVAS PARTICLES ========== */
+        #particleCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ========== CUSTOM CURSOR ========== */
+        .custom-cursor {
+            position: fixed;
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--rose-light);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, border-color 0.3s, background 0.3s;
+            mix-blend-mode: difference;
+        }
+        .custom-cursor-dot {
+            position: fixed;
+            width: 5px;
+            height: 5px;
+            background: #f0a0ae;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+        }
+        .custom-cursor.heart-cursor {
+            width: 36px;
+            height: 36px;
+            border-color: #e07b8c;
+            background: rgba(224, 123, 140, 0.2);
+            animation: cursorPulse 0.7s ease-out;
+        }
+        @keyframes cursorPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        /* ========== CLICK HEART BURST ========== */
+        .click-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 99998;
+            font-size: 24px;
+            animation: heartBurst 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            filter: drop-shadow(0 0 10px rgba(199, 91, 110, 0.8));
+        }
+        @keyframes heartBurst {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(0.4) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(var(--dx), var(--dy)) scale(1.3) rotate(var(--rot));
+            }
+            100% {
+                opacity: 0;
+                transform: translate(calc(var(--dx)*2), calc(var(--dy)*2 - 60px)) scale(0.2) rotate(var(--rot));
+            }
+        }
+
+        /* ========== NAVIGATION ========== */
+        .floating-nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .nav-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--glass);
+            border: 1.5px solid var(--glass-border);
+            color: var(--gold-light);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(12px);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+        }
+        .nav-dot:hover {
+            background: var(--rose-dark);
+            border-color: var(--rose-light);
+            color: #fff;
+            transform: scale(1.15);
+            box-shadow: 0 0 30px rgba(199, 91, 110, 0.5);
+        }
+        .nav-dot .tooltip {
+            position: absolute;
+            right: 50px;
+            background: var(--card-bg);
+            color: var(--cream);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            border: 1px solid var(--glass-border);
+        }
+        .nav-dot:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* ========== SECTIONS ========== */
+        .section {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 24px;
+        }
+        .section-inner {
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+        }
+        .section-wide {
+            max-width: 1100px;
+        }
+
+        /* ========== HERO ========== */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 40px 24px;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-glow {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(199, 91, 110, 0.25) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: glowPulse 3s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        @keyframes glowPulse {
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.3);
+                opacity: 1;
+            }
+        }
+        .hero-title {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: clamp(2.8rem, 6vw, 5.5rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #f5d5c8 0%, #e8b4a0 25%, #f0c4b8 40%, #d4956b 60%, #e0a890 80%, #f5d5c8 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s ease-in-out infinite;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+        @keyframes shimmer {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        .hero-subtitle {
+            font-family: 'Tiro Bangla', serif;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--rose-light);
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            opacity: 0.85;
+            animation: fadeInUp 1.5s ease-out;
+        }
+        .hero-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 20px auto;
+            animation: expandLine 2s ease-in-out infinite;
+        }
+        @keyframes expandLine {
+            0%,
+            100% {
+                width: 60px;
+                opacity: 0.6;
+            }
+            50% {
+                width: 140px;
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== CARDS ========== */
+        .love-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px 32px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-gold), var(--shadow-rose);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .love-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(212, 167, 116, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(199, 91, 110, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            transition: all 0.7s;
+        }
+        .love-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 80px rgba(212, 167, 116, 0.2), 0 0 50px rgba(199, 91, 110, 0.18);
+            border-color: rgba(212, 167, 116, 0.45);
+        }
+        .love-card:hover::before {
+            background: radial-gradient(circle at 30% 20%, rgba(212, 167, 116, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(199, 91, 110, 0.1) 0%, transparent 50%);
+        }
+
+        .section-label {
+            font-family: 'Tiro Bangla', serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+            display: inline-block;
+            padding: 6px 16px;
+            border: 1px solid rgba(212, 167, 116, 0.3);
+            border-radius: 20px;
+            background: rgba(212, 167, 116, 0.06);
+        }
+        .section-heading {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: clamp(1.6rem, 3vw, 2.3rem);
+            font-weight: 700;
+            color: var(--cream);
+            margin: 16px 0;
+            line-height: 1.5;
+        }
+        .love-text {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            line-height: 2;
+            margin-bottom: 14px;
+            font-weight: 400;
+        }
+        .highlight {
+            color: var(--rose-light);
+            font-weight: 600;
+        }
+        .gold-highlight {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        /* ========== 30 NOTES GRID ========== */
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .note-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 20px 18px;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .note-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--rose), var(--gold), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .note-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212, 167, 116, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(199, 91, 110, 0.12);
+            background: #231a1f;
+        }
+        .note-card:hover::after {
+            opacity: 1;
+        }
+        .note-number {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(199, 91, 110, 0.2);
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            transition: all 0.4s;
+        }
+        .note-card:hover .note-number {
+            color: rgba(199, 91, 110, 0.5);
+            transform: scale(1.1);
+        }
+        .note-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+            padding-right: 30px;
+            line-height: 1.7;
+        }
+
+        /* ========== 100 REASONS ========== */
+        .reasons-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .reason-chip {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 25px;
+            padding: 14px 16px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            cursor: default;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .reason-chip:hover {
+            background: #2a1d25;
+            border-color: var(--rose);
+            color: var(--cream);
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(199, 91, 110, 0.2);
+            z-index: 2;
+        }
+        .reason-chip .chip-number {
+            display: block;
+            font-family: 'Noto Serif Bengali', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--rose-light);
+            margin-bottom: 2px;
+        }
+
+        /* ========== PROPOSAL SECTION ========== */
+        .proposal-box {
+            text-align: center;
+            padding: 50px 30px;
+            border: 2px solid rgba(212, 167, 116, 0.5);
+            border-radius: 24px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+        .proposal-box::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 26px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--rose), var(--gold), var(--rose));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: borderRotate 6s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes borderRotate {
+            0% {
+                background: linear-gradient(0deg, var(--rose), var(--gold), var(--rose));
+            }
+            100% {
+                background: linear-gradient(360deg, var(--rose), var(--gold), var(--rose));
+            }
+        }
+        .proposal-question {
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--cream);
+            margin: 20px 0;
+            animation: gentlePulse 2s ease-in-out infinite;
+        }
+        @keyframes gentlePulse {
+            0%,
+            100% {
+                opacity: 0.9;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* ========== SPECIAL NOTE ========== */
+        .special-note {
+            background: linear-gradient(135deg, rgba(199, 91, 110, 0.1), rgba(212, 167, 116, 0.08));
+            border: 1px solid rgba(212, 167, 116, 0.35);
+            border-radius: 20px;
+            padding: 32px 28px;
+            text-align: center;
+            position: relative;
+        }
+        .special-note .envelope-icon {
+            font-size: 3rem;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-18px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            70% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* ========== SCROLL REVEAL ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+        .reveal-delay-5 {
+            transition-delay: 0.5s;
+        }
+
+        /* ========== TYPING EFFECT ========== */
+        .typing-text {
+            border-right: 3px solid var(--rose-light);
+            padding-right: 6px;
+            animation: blink 0.8s step-end infinite;
+            display: inline;
+        }
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* ========== MUSIC TOGGLE ========== */
+        .music-toggle {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 1000;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--glass);
+            border: 1.5px solid var(--glass-border);
+            color: var(--gold-light);
+            font-size: 20px;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            transition: all 0.4s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .music-toggle:hover {
+            background: var(--rose-dark);
+            border-color: var(--rose-light);
+            box-shadow: 0 0 25px rgba(199, 91, 110, 0.4);
+        }
+        .music-toggle.playing {
+            animation: musicPulse 1.5s ease-in-out infinite;
+        }
+        @keyframes musicPulse {
+            0%,
+            100% {
+                box-shadow: 0 0 10px rgba(199, 91, 110, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(199, 91, 110, 0.7);
+            }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .section {
+                padding: 50px 16px;
+                min-height: auto;
+            }
+            #hero {
+                min-height: 90vh;
+            }
+            .love-card {
+                padding: 28px 18px;
+            }
+            .notes-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .reasons-container {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 7px;
+            }
+            .reason-chip {
+                padding: 10px 10px;
+                font-size: 0.75rem;
+            }
+            .floating-nav {
+                top: 10px;
+                right: 8px;
+                gap: 5px;
+            }
+            .nav-dot {
+                width: 32px;
+                height: 32px;
+                font-size: 10px;
+            }
+            .nav-dot .tooltip {
+                display: none;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+            .reasons-container {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 5px;
+            }
+            .reason-chip {
+                padding: 8px 6px;
+                font-size: 0.7rem;
+                border-radius: 18px;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .section-heading {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== ব্যাকগ্রাউন্ড ওভারলে ===== -->
-    <div class="bg-overlay"></div>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="cursorDot"></div>
 
-    <!-- ===== ভাসমান তারা ===== -->
-    <div class="stars" id="stars"></div>
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
 
-    <!-- ===== ভাসমান হার্ট ===== -->
-    <div class="floating-hearts" id="floatingHearts"></div>
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <a href="#hero" class="nav-dot" title="তোমাকে অনেক ভালোবাসি রুনা"><span class="tooltip">💖 তোমাকে অনেক ভালোবাসি রুনা</span>🏠</a>
+        <a href="#section-deep" class="nav-dot" title="মনের লুকানো কথা"><span class="tooltip">🌙 মনের কথা: </span>📜</a>
+        <a href="#section-notes" class="nav-dot" title="নোট"><span class="tooltip">💌নোট</span>💝</a>
+        <a href="#section-letter" class="nav-dot" title="চিঠি"><span class="tooltip">✍️ চিঠি</span>💌</a>
+        <a href="#section-reasons" class="nav-dot" title="তোমাকে ভালোবাসার কারণ"><span class="tooltip"> তোমাকে ভালোবাসার কারণ</span>🔢</a>
+        <a href="#section-proposal" class="nav-dot" title="প্রশ্ন"><span class="tooltip">💍 প্রশ্ন</span>💘</a>
+    </nav>
 
-    <!-- ===== মেইন কন্টেইনার ===== -->
-    <div class="container">
+    <!-- Music Toggle -->
+    <button class="music-toggle playing" id="musicToggle" title="সুর চালু/বন্ধ">🎵</button>
+    <audio id="bgMusic" loop preload="auto">
+        <source src="data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAADkAD//////////////////////////////////////////////8AAAA5TEFNRTMuOTlyAaoAAAAAAAAAACSAJAaURAAgAAAHSgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//uQZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAAFAAADkAADAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD//////////////////////////////8AAAA5TEFNRTMuOTlyAaoAAAAAAAAAACSAJAUkAAgAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" type="audio/mpeg">
+    </audio>
 
-        <!-- শিরোনাম -->
-        <div class="title">💖 Love You, Runaa 💖</div>
-        <div class="sub-title"> তোমার চোখের দিকে তাকালে আমার হৃদয় থমকে যায় babeeeee🥺, তোমার চোখের দিকে তাকিয়ে কাটিয়ে দিতে ইচ্ছে করে অনন্তকাল! তোমার সাথে হাঁটতে ইচ্ছে করে অফুরন্ত পথ! তোমার কোলে মাথা রেখে থাকতে ইচ্ছে করে অফুরন্ত সময়! তোমার পাশে বসে দেখতে ইচ্ছে করে পৃথিবীর শেষ সূর্যাস্থ! অনেক বেশি ভালোবাসি তোমায় বেবি! তুমি কি আমার জীবনসঙ্গী হবা?</div>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <p class="section-label">✨ শুধু তোমার জন্য ✨</p>
+            <h1 class="hero-title">রুনা</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">তুমি শুধু আমার জীবনের একটি অংশ নও—<br>তুমি আমার সমগ্র অনুভূতি</p>
+            <p style="color:var(--text-light);font-size:1rem;max-width:500px;margin:0 auto;">
+                আমার হাসি, আমার স্বপ্ন, আমার ভবিষ্যৎ—<br>সবকিছুর মাঝেই তুমি আছো
+            </p>
+        </div>
+    </section>
 
-        <!-- চোখের ছবি -->
-        <div class="eye-wrapper" id="eyeWrapper">
-            <div class="eye-inner">
-                <img src="eyes.png" alt="Runa's Eyes" id="eyeImage" />
-                <div class="eye-glow"></div>
+    <!-- ==================== SECTION: DEEP FEELING ==================== -->
+    <section class="section" id="section-deep">
+        <div class="section-inner">
+            <div class="love-card reveal">
+                <span class="section-label">🌙 আমার অনুভূতি তোমাকে ঘিড়ে</span>
+                <h2 class="section-heading">তুমি আমার জীবনের কোনো একটি অংশ নও</h2>
+                <p class="love-text">
+                    রুনা, তুমি আমার জীবনের কোনো একটি অংশ নও—তুমি আমার জীবনের সঙ্গে জড়িয়ে থাকা এক <span class="highlight">গভীর অনুভূতি</span>। আমার হাসি, আমার স্বপ্ন, আমার ভবিষ্যৎ—সবকিছুর মাঝেই কোথাও না কোথাও তুমি আছো। তাই আমি শুধু তোমাকে ভালোবাসতে চাই না, আমি চাই জীবনের <span class="gold-highlight">প্রতিটি অধ্যায়ে</span> তোমাকে আমার পাশে দেখতে।
+                </p>
+                <p class="love-text">
+                    জীবন যতই বদলে যাক, সময় যতই কঠিন হোক, আমি চাই দিনের শেষে ফিরে তাকালে তোমাকেই আমার পাশে পাই। তোমার হাতটা ধরে অনেকটা পথ একসঙ্গে হাঁটতে চাই।
+                </p>
+                <p class="love-text">
+                    আমি তোমাকে আমার জীবনের <span class="highlight">সবটুকু</span> মনে করি, রুনা। আর আমার সবচেয়ে গভীর ইচ্ছেটা হলো—তুমি যেন আমার পাশে থাকো। আজ, আগামীকাল, আর আমাদের জীবনের যতটা পথ একসঙ্গে চলা সম্ভব।
+                </p>
             </div>
-            <div class="click-hint">👆 ক্লিক করো </div>
         </div>
+    </section>
 
-        <!-- টাইপরাইটার মেসেজ বক্স -->
-        <div class="message-box">
-            <div id="typewriter"></div>
+    <!-- ==================== SECTION: BEAUTIFUL EYES & SMILE ==================== -->
+    <section class="section" id="section-beauty">
+        <div class="section-inner">
+            <div class="love-card reveal">
+                <span class="section-label">👁️ তোমার চোখের মায়া</span>
+                <h2 class="section-heading">পৃথিবীর সবচেয়ে সুন্দর মানুষ</h2>
+                <p class="love-text">
+                    প্রিয় রুনা, তোমাকে ভালোবাসি—এই কথাটি হয়তো খুব ছোট, অথচ এর ভেতরেই লুকিয়ে আছে আমার সমস্ত অনুভূতি। আমার চোখে তুমি পৃথিবীর সবচেয়ে সুন্দর মানুষ; শুধু তোমার সৌন্দর্যে নয়, তোমার <span class="gold-highlight">অস্তিত্বের প্রতিটি ছোট্ট ব্যাপারেই</span> আমি মুগ্ধ।
+                </p>
+                <p class="love-text">
+                    তোমার চোখের দিকে তাকালে মনে হয়, পৃথিবীর সমস্ত কোলাহল থেমে গেছে। সেখানে এক অদ্ভুত <span class="highlight">মায়া</span> আছে—যে মায়ায় আমি বারবার হারিয়ে যেতে চাই। তোমার কথা ভাবলেই আমার সময় থেমে থাকে, আর আমার নিঃশব্দ দিনগুলোর প্রতিটি মুহূর্তে তুমি অদৃশ্য কোনো সুরের মতো মিশে থাকো।
+                </p>
+                <p class="love-text">
+                    তোমাকে পাওয়ার ইচ্ছে আমার কোনো ক্ষণিকের আবেগ নয়। তুমি আমার কাছে এমন এক অনুভূতি, যাকে আমি যত্ন করে নিজের জীবনের সঙ্গে জড়িয়ে রাখতে চাই। তোমার পাশে থেকে তোমার <span class="gold-highlight">হাসির কারণ</span> হতে চাই, তোমার মন খারাপের দিনে নীরব আশ্রয় হতে চাই।
+                </p>
+            </div>
         </div>
+    </section>
 
-        <!-- ছোট ফুটার -->
-        <div style="font-size:0.75rem; opacity:0.3; letter-spacing:2px; margin-top:10px;">
-            ❤️ ∞ ❤️
+    <!-- ==================== SECTION: 30 SWEET NOTES ==================== -->
+    <section class="section" id="section-notes">
+        <div class="section-inner section-wide">
+            <div class="reveal" style="text-align:center;margin-bottom:30px;">
+                <span class="section-label">💌</span>
+                <h2 class="section-heading"> আমার মনের লুকানো কথা </h2>
+            </div>
+            <div class="notes-grid">
+                <div class="note-card reveal reveal-delay-1"><span class="note-number">১</span><p class="note-text">রুনা, তুমি জানো না—তোমার সঙ্গে কথা বলার পর আমার মনটা কতটা ভালো হয়ে যায়।</p></div>
+                <div class="note-card reveal reveal-delay-1"><span class="note-number">২</span><p class="note-text">তোমার হাসিটা আমার কাছে পৃথিবীর সবচেয়ে সুন্দর দৃশ্যগুলোর একটি।</p></div>
+                <div class="note-card reveal reveal-delay-2"><span class="note-number">৩</span><p class="note-text">আজ তোমাকে কোনো কারণ ছাড়াই মনে পড়ছে। যদিও সত্যি বলতে, তোমাকে মনে করার জন্য আমার কোনো কারণের প্রয়োজন হয় না।</p></div>
+                <div class="note-card reveal reveal-delay-2"><span class="note-number">৪</span><p class="note-text">তুমি আমার জীবনের সবচেয়ে সুন্দর আকস্মিক ঘটনা।</p></div>
+                <div class="note-card reveal reveal-delay-2"><span class="note-number">৫</span><p class="note-text">তোমাকে পেয়ে আমি বুঝেছি, কিছু মানুষ জীবনে আসে শুধু জীবনটাকে আরও সুন্দর করে দেওয়ার জন্য।</p></div>
+                <div class="note-card reveal reveal-delay-3"><span class="note-number">৬</span><p class="note-text">রুনা, তুমি হয়তো জানো না, কিন্তু তোমার একটি ছোট্ট মেসেজও আমার পুরো দিন বদলে দিতে পারে।</p></div>
+                <div class="note-card reveal reveal-delay-3"><span class="note-number">৭</span><p class="note-text">তোমার সঙ্গে কথা বলার সময়টা শেষ হয়ে গেলে কেন জানি মনে হয়—আরও কিছুক্ষণ কথা বলা যেত।</p></div>
+                <div class="note-card reveal reveal-delay-3"><span class="note-number">৮</span><p class="note-text">তুমি আমার প্রিয় মানুষদের মধ্যে শুধু একজন নও। তুমি সেই মানুষ, যার জন্য আমার হৃদয়ে আলাদা একটি পৃথিবী আছে।</p></div>
+                <div class="note-card reveal reveal-delay-4"><span class="note-number">৯</span><p class="note-text">তোমাকে যত দেখি, ততই মনে হয়—তোমার মধ্যে এমন কিছু আছে, যা শুধু চোখ দিয়ে দেখা যায় না; অনুভব করতে হয়।</p></div>
+                <div class="note-card reveal reveal-delay-4"><span class="note-number">১০</span><p class="note-text">তোমার চোখ দুটো সত্যিই মায়াবী। সেখানে তাকালে মনে হয়, পৃথিবীর সব ব্যস্ততা একটু থেমে যাক।</p></div>
+                <div class="note-card reveal reveal-delay-4"><span class="note-number">১১</span><p class="note-text">তুমি আমার জীবনের এমন একটি অধ্যায়, যেটা আমি কখনো শেষ করতে চাই না।</p></div>
+                <div class="note-card reveal reveal-delay-5"><span class="note-number">১২</span><p class="note-text">তোমার সঙ্গে কথা না বললেও তোমাকে মিস করি, আর কথা বলার পরও তোমাকে আরও কিছুক্ষণ কাছে পেতে ইচ্ছে করে।</p></div>
+                <div class="note-card reveal reveal-delay-5"><span class="note-number">১৩</span><p class="note-text">রুনা, তুমি আমার কাছে কোনো নিখুঁত মানুষ নও—তুমি তার থেকেও বেশি কিছু। তুমি আমার কাছে আমার প্রিয় মানুষ।</p></div>
+                <div class="note-card reveal"><span class="note-number">১৪</span><p class="note-text">তোমার মন খারাপের দিনে যদি পৃথিবীটা তোমার বিরুদ্ধে দাঁড়ায়, তবুও মনে রেখো—আমি তোমার পাশে থাকব।</p></div>
+                <div class="note-card reveal"><span class="note-number">১৫</span><p class="note-text">তোমাকে ভালোবাসার সবচেয়ে সুন্দর দিক হলো, প্রতিদিন তোমাকে নতুন করে ভালোবাসার কোনো না কোনো কারণ খুঁজে পাই।</p></div>
+                <div class="note-card reveal"><span class="note-number">১৬</span><p class="note-text">তুমি আমার কাছে সেই মানুষ, যার সঙ্গে সাধারণ একটি দিনও অসাধারণ মনে হয়।</p></div>
+                <div class="note-card reveal"><span class="note-number">১৭</span><p class="note-text">তোমার নামটা আমার কাছে শুধু একটি নাম নয়—এটা আমার অনেক হাসি, অনেক অনুভূতি আর অনেক ভালোবাসার সঙ্গে জড়িয়ে আছে।</p></div>
+                <div class="note-card reveal"><span class="note-number">১৮</span><p class="note-text">রুনা, তুমি আমার জীবনে আসার পর কিছু সাধারণ মুহূর্তও খুব বিশেষ হয়ে গেছে।</p></div>
+                <div class="note-card reveal"><span class="note-number">১৯</span><p class="note-text">তোমার সঙ্গে ভবিষ্যৎ নিয়ে ভাবতে আমার ভালো লাগে। কারণ সেই ভাবনাগুলোতে তুমি থাকো।</p></div>
+                <div class="note-card reveal"><span class="note-number">২০</span><p class="note-text">তুমি যদি কখনো নিজেকে কম সুন্দর মনে করো, তাহলে আমার চোখ দিয়ে নিজেকে একবার দেখো।</p></div>
+                <div class="note-card reveal"><span class="note-number">২১</span><p class="note-text">তোমার যত্ন নেওয়ার ইচ্ছে আমার নিজের অজান্তেই হয়। হয়তো এটাই ভালোবাসার সবচেয়ে নীরব রূপ।</p></div>
+                <div class="note-card reveal"><span class="note-number">২২</span><p class="note-text">তোমার সঙ্গে আমার যত কথা হয়, তার থেকেও বেশি কথা হয় তোমাকে নিয়ে আমার মনে।</p></div>
+                <div class="note-card reveal"><span class="note-number">২৩</span><p class="note-text">তুমি আমার কাছে কোনো অভ্যাস নও, যাকে ছেড়ে দেওয়া যায়। তুমি এমন এক অনুভূতি, যাকে হৃদয় থেকে আলাদা করা যায় না।</p></div>
+                <div class="note-card reveal"><span class="note-number">২৪</span><p class="note-text">রুনা, তুমি হাসলে আমার মনে হয়—এই পৃথিবীতে এখনও অনেক সুন্দর জিনিস বেঁচে আছে।</p></div>
+                <div class="note-card reveal"><span class="note-number">২৫</span><p class="note-text">তোমার সঙ্গে থাকতে চাই শুধু সুখের দিনগুলোতে নয়; তোমার কঠিন দিনগুলোরও একজন মানুষ হতে চাই।</p></div>
+                <div class="note-card reveal"><span class="note-number">২৬</span><p class="note-text">তুমি আমার জীবনের সবচেয়ে সুন্দর 'কেন জানি না'—কেন তোমাকে এত ভালোবাসি জানি না, শুধু জানি ভালোবাসি।</p></div>
+                <div class="note-card reveal"><span class="note-number">২৭</span><p class="note-text">তোমার সঙ্গে কাটানো সময় কখনো নষ্ট হয় না। তোমার সঙ্গে কাটানো সময় আমার জীবনের সবচেয়ে সুন্দর সময়গুলোর একটি।</p></div>
+                <div class="note-card reveal"><span class="note-number">২৮</span><p class="note-text">রুনা, তুমি হয়তো আমার পৃথিবীর পুরোটা নও, কিন্তু আমার পৃথিবীর সবচেয়ে সুন্দর অংশগুলোর একটি।</p></div>
+                <div class="note-card reveal"><span class="note-number">২৯</span><p class="note-text">তোমাকে নিয়ে লিখতে বসলে আমার লেখা শেষ হয়ে যেতে পারে, কিন্তু তোমার প্রতি আমার অনুভূতি কখনো শেষ হবে না।</p></div>
+                <div class="note-card reveal"><span class="note-number">৩০</span><p class="note-text">তুমি আমার হও—এই ইচ্ছেটা আছে। কিন্তু তার থেকেও বড় ইচ্ছা হলো, তুমি যেন সবসময় সুখী থাকো। আর যদি সেই সুখের সামান্য কারণও আমি হতে পারি, তাহলে সেটাই আমার জন্য অনেক।</p></div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- ==================== SECTION: DEEP LOVE LETTER ==================== -->
+    <section class="section" id="section-letter">
+        <div class="section-inner">
+            <div class="love-card reveal">
+                <span class="section-label">✍️ চিঠি</span>
+                <h2 class="section-heading">তোমাকে নিয়ে লিখতে বসলে...</h2>
+                <p class="love-text">
+                    রুনা, তোমাকে নিয়ে লিখতে গেলে আমার মনে হয়, আমি যেন কোনো মানুষকে নিয়ে লিখছি না—আমি লিখছি আমার জীবনের এমন এক অনুভূতিকে, যার কোনো নির্দিষ্ট নাম নেই। তুমি আমার কাছে শুধু ভালোবাসার মানুষ নও; তুমি আমার <span class="highlight">অনুভূতির এমন এক অংশ</span>, যাকে আলাদা করে দেখার কোনো উপায় নেই।
+                </p>
+                <p class="love-text">
+                    তোমার কথা আমার মনে আসে খুব অদ্ভুতভাবে। কখনো কোনো কারণ ছাড়াই। কোনো নির্দিষ্ট মুহূর্তের অপেক্ষা না করেই। হঠাৎ করেই মনে হয়, এই মুহূর্তে তোমার সঙ্গে কথা বলতে ইচ্ছে করছে। তোমার কণ্ঠ শুনতে ইচ্ছে করছে।
+                </p>
+                <p class="love-text">
+                    তুমি আমার জীবনে এমনভাবে জড়িয়ে গেছো যে, তোমাকে আলাদা করে মনে করার প্রয়োজন হয় না। তুমি এমনিতেই আমার ভাবনার মধ্যে থেকে যাও। তোমার ভেতরের মানুষটাকে জানতে ইচ্ছে করে—শুধু সেই মানুষটাকে নয়, যাকে সবাই দেখে—বরং সেই <span class="gold-highlight">রুনাকে</span>, যে কখনো নিজের সঙ্গে একা থাকে, যে নিজের মনে অনেক কথা জমিয়ে রাখে।
+                </p>
+                <p class="love-text">
+                    আমি চাই, তোমার জীবনের বড় বড় মুহূর্তগুলোর পাশাপাশি ছোট ছোট মুহূর্তগুলোরও একজন মানুষ হতে। তোমার কোনো অকারণ আনন্দের খবর সবার আগে শুনতে চাই। তোমার কোনো ছোট্ট সাফল্যে তোমার চেয়েও বেশি খুশি হতে চাই।
+                </p>
+                <p class="love-text">
+                    তোমাকে ভালোবাসার মধ্যে আমার কোনো তাড়াহুড়ো নেই। আমি তোমাকে একদিনে ভালোবাসিনি, তাই একদিনে তোমার প্রতি আমার অনুভূতি শেষও হবে না। তোমাকে ভালোবাসা আমার কাছে কোনো হঠাৎ জ্বলে ওঠা আগুন নয়; বরং এমন এক <span class="highlight">আলো</span>, যা ধীরে ধীরে আমার ভেতরটা পূর্ণ করে ফেলেছে।
+                </p>
+                <p class="love-text">
+                    কারণ ভালোবাসা শুধু কাউকে ভালো লাগার নাম নয়। ভালোবাসা হলো—একজন মানুষকে <span class="gold-highlight">বারবার বেছে নেওয়া</span>। তার ভালো দিনে, খারাপ দিনে, সহজ সময়ে, কঠিন সময়ে। তার হাসির পাশাপাশি তার দুর্বলতাকেও আপন করে নেওয়া। আর আমি তোমাকে ঠিক সেভাবেই ভালোবাসতে চাই।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: EVEN DEEPER ==================== -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="love-card reveal">
+                <span class="section-label">💫 অদ্ভুত মায়া</span>
+                <h2 class="section-heading">তোমার চোখের মায়ায় হারিয়ে যাই</h2>
+                <p class="love-text">
+                    প্রিয় রুনা, তোমাকে নিয়ে লিখতে বসলে কোথা থেকে শুরু করব, তা আমি কখনোই বুঝে উঠতে পারি না। কারণ তোমাকে নিয়ে আমার অনুভূতিগুলো কোনো নির্দিষ্ট শব্দে আটকে থাকে না। তোমাকে ভালোবাসার কথা লিখতে গেলে মনে হয়, আমার ভেতরে জমে থাকা অসংখ্য অনুভূতির সামনে <span class="highlight">শব্দগুলোও কেমন অসহায়</span> হয়ে পড়ে।
+                </p>
+                <p class="love-text">
+                    তুমি জানো কি, তোমার চোখ দুটো আমার কাছে কতটা মায়াবী? তোমার চোখের দিকে তাকালে আমি যেন হঠাৎ কোনো অচেনা অথচ অদ্ভুত সুন্দর জগতে হারিয়ে যাই। সেখানে কোনো কোলাহল নেই, কোনো অস্থিরতা নেই—শুধু এক <span class="gold-highlight">গভীর মায়া</span>। এমন এক মায়া, যেখান থেকে ফিরে আসতে ইচ্ছে করে না।
+                </p>
+                <p class="love-text">
+                    তোমার হাসি আমার কাছে শুধু একটি হাসি নয়। তোমার হাসি যেন আমার ক্লান্ত দিনের শেষে হঠাৎ জ্বলে ওঠা কোনো <span class="highlight">আলো</span>। তোমাকে হাসতে দেখলে আমার নিজের অজান্তেই মন ভালো হয়ে যায়। মনে হয়, পৃথিবীটা হয়তো এতটা কঠিন নয়, যতটা কখনো কখনো মনে হয়।
+                </p>
+                <p class="love-text">
+                    তোমার প্রতি আমার যে ভালো লাগা, তা কোনো একদিনে তৈরি হয়নি। ধীরে ধীরে, অজান্তেই, কখন যে তুমি আমার মনের এতটা জায়গা জুড়ে নিয়েছো, আমি নিজেও বুঝতে পারিনি। এখন তোমাকে ছাড়া নিজের দিনগুলো কল্পনা করলে কেমন যেন <span class="gold-highlight">অসম্পূর্ণ</span> লাগে। মনে হয়, জীবনের কোনো একটি গুরুত্বপূর্ণ সুর সেখানে অনুপস্থিত।
+                </p>
+                <p class="love-text">
+                    তোমার জীবনে এমন একজন মানুষ হতে চাই, যার কাছে তুমি নির্ভয়ে নিজের সব কথা বলতে পারো। যার কাছে তোমার হাসি যেমন নিরাপদ, তোমার কান্নাও তেমনই নিরাপদ। তোমার আনন্দের দিনে তোমার সঙ্গে হাসতে চাই, আর তোমার কঠিন দিনগুলোতে তোমার পাশে <span class="highlight">নীরবে দাঁড়িয়ে থাকতে</span> চাই।
+                </p>
+                <p class="love-text">
+                    রুনা, তোমাকে ভালোবাসার কারণ লিখতে বসলে হয়তো একশোটি কারণ লিখতে পারব। তারও বেশি লিখতে পারব। কিন্তু সত্যি বলতে, সেগুলোও যথেষ্ট হবে না। কারণ তোমাকে নিয়ে আমার ভালোবাসা কোনো তালিকার একশোটি কারণের মধ্যে সীমাবদ্ধ নয়। তোমাকে নিয়ে লিখতে গেলে, রুনা, <span class="gold-highlight">কোনোদিনই শেষ হবে না</span>।
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: 100 REASONS ==================== -->
+    <section class="section" id="section-reasons">
+        <div class="section-inner section-wide">
+            <div class="reveal" style="text-align:center;margin-bottom:24px;">
+                <span class="section-label"> তোমাকে ভালোবাসার কারণ</span>
+                <h2 class="section-heading">প্রতিটি কারণই একেকটি গল্প</h2>
+                <p style="color:var(--text-light);">তবে সত্যি বলতে—এই ১০০টি কারণও যথেষ্ট নয়। তোমাকে ভালোবাসার কারণ <span class="highlight">কোনোদিনই শেষ হবে না</span>।</p>
+            </div>
+            <div class="reasons-container" id="reasonsContainer">
+                <!-- Reasons 1-100 generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: PROPOSAL ==================== -->
+    <section class="section" id="section-proposal">
+        <div class="section-inner">
+            <div class="proposal-box reveal">
+                <span class="section-label">💍 আমার সমস্ত উত্তর</span>
+                <p class="love-text" style="font-size:1.1rem;">
+                    প্রিয় রুনা, তোমাকে ভালোবাসি—এই কথাটি হয়তো খুব ছোট, অথচ এর ভেতরেই লুকিয়ে আছে আমার সমস্ত অনুভূতি। আমার চোখে তুমি পৃথিবীর সবচেয়ে সুন্দর মানুষ; শুধু তোমার সৌন্দর্যে নয়, তোমার <span class="gold-highlight">অস্তিত্বের প্রতিটি ছোট্ট ব্যাপারেই</span> আমি মুগ্ধ।
+                </p>
+                <p class="love-text">
+                    তোমার চোখের দিকে তাকালে মনে হয়, পৃথিবীর সমস্ত কোলাহল থেমে গেছে। সেখানে এক অদ্ভুত মায়া আছে—যে মায়ায় আমি বারবার হারিয়ে যেতে চাই। তোমার কথা ভাবলেই আমার সময় থেমে থাকে।
+                </p>
+                <p class="love-text">
+                    তোমাকে পাওয়ার ইচ্ছে আমার কোনো ক্ষণিকের আবেগ নয়। তুমি আমার কাছে এমন এক অনুভূতি, যাকে আমি যত্ন করে নিজের জীবনের সঙ্গে জড়িয়ে রাখতে চাই। তোমার পাশে থেকে তোমার <span class="highlight">হাসির কারণ</span> হতে চাই, তোমার মন খারাপের দিনে নীরব আশ্রয় হতে চাই।
+                </p>
+                <div class="hero-divider" style="margin:24px auto;"></div>
+                <p style="color:var(--gold-light);font-size:1.1rem;margin-bottom:8px;">রুনা, ভালোবাসা যদি সত্যিই কোনো প্রশ্ন হয়,</p>
+                <p style="color:var(--gold-light);font-size:1.1rem;">তবে আমার সমস্ত উত্তর একটাই—</p>
+                <p class="proposal-question">তুমি কি হবে আমার?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SECTION: SPECIAL NOTE ==================== -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="special-note reveal">
+                <div class="envelope-icon">💌</div>
+                <span class="section-label">তোমার জন্য</span>
+                <p class="love-text" style="font-size:1.05rem;color:var(--cream);margin-top:12px;">
+                    রুনা, তোমাকে খুশি করার জন্য আমি হয়তো অনেক কিছু করতে পারব না। কিন্তু তোমাকে ভালোবাসার ক্ষেত্রে আমি কখনো কমতি রাখতে চাই না। তোমার হাসিটা আমার কাছে সত্যিই অনেক মূল্যবান। তাই তুমি যতদিন আমার জীবনে থাকবে, ততদিন তোমাকে ভালোবাসার নতুন নতুন কারণ খুঁজে যাব। আর বিশ্বাস করো—এই কারণগুলো লিখতে বসলে <span class="highlight">কোনোদিনই শেষ হবে না</span>।
+                </p>
+                <p style="color:var(--gold-light);font-weight:600;font-size:1.2rem;margin-top:16px;">
+                    ভালোবাসি তোমাকে, রুনা।<br>আজ, আগামীকাল, এবং আমার হৃদয়ে যতদিন ভালোবাসা বেঁচে থাকবে। 💖
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <section style="min-height:30vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 24px;position:relative;z-index:1;">
+        <div>
+            <p style="color:var(--rose-light);font-family:'Noto Serif Bengali',serif;font-size:1.5rem;">🌹 রুনা 🌹</p>
+            <p style="color:var(--text-light);font-size:0.9rem;">তোমাকে ভালোবাসার কারণ লিখতে গেলে—<br>কখনোই শেষ হবে না।</p>
+            <div class="hero-divider" style="margin:16px auto;"></div>
+            <p style="color:var(--text-light);font-size:0.75rem;opacity:0.6;"> রুকাইয়া তাবাসসুম রুনা ✨</p>
+        </div>
+    </section>
 
     <script>
-        // ==========================================================
-        //  ১. ভাসমান হার্ট জেনারেটর
-        // ==========================================================
-        function createFloatingHearts() {
-            const container = document.getElementById('floatingHearts');
-            const emojis = ['❤️', '💙', '💕', '💖', '✨', '🌹', '💗'];
-            for (let i = 0; i < 40; i++) {
-                const span = document.createElement('span');
-                span.className = 'heart-float';
-                span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-                span.style.left = Math.random() * 100 + '%';
-                span.style.fontSize = (Math.random() * 22 + 14) + 'px';
-                span.style.animationDuration = (Math.random() * 15 + 12) + 's';
-                span.style.animationDelay = (Math.random() * 18) + 's';
-                container.appendChild(span);
-            }
-        }
-        createFloatingHearts();
-
-        // ==========================================================
-        //  ২. তারা জেনারেটর
-        // ==========================================================
-        function createStars() {
-            const container = document.getElementById('stars');
-            for (let i = 0; i < 80; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = (Math.random() * 5) + 's';
-                star.style.width = star.style.height = (Math.random() * 3 + 1) + 'px';
-                container.appendChild(star);
-            }
-        }
-        createStars();
-
-        // ==========================================================
-        //  ৩. টাইপরাইটার ইফেক্ট (আপনার লেখা + বাড়তি ভালোবাসার কথা)
-        // ==========================================================
-        const poemLines = [
-            // ---- আপনার দেওয়া আসল কবিতা ----
-            "তোমার চোখ এত মায়াবি কেন?",
-            "আমি তোমার চোখের দিকে তাকিয়ে অনন্তকাল পাড়ি দিতে পারব।",
-            "",
-            "|  নেশা  |",
-            "",
-            "নেশা মানুষের কত ধরণেরই না হয়;",
-            "কারো টাকার নেশা, কারো জুয়া, কারো নারী।",
-            "অথচ দেখ, আমার নেশা তোমায় দেখা। শুধুই তোমায় দেখা!",
-            "ছোঁয়ার নেই, পাওয়ার'ও নেই।",
-            "কারণ– আমি জানি তুমি আমার নও।",
-            "হ্যামিলনের বাঁশির সুরের মতো তোমার চোখ যখন যেভাবে আমায় পাগল করে,",
-            "মন তক্ষুনি বলে, মানুষ এত মায়াবী হয় কিভাবে?",
-            "",
-            "যদি প্রশ্ন করো সৌন্দর্যের সংজ্ঞা?",
-            "আমি নিশ্চয়ই বলব তোমার কাজলরাঙা চোখ,",
-            "পৃথিবীর সবচেয়ে সুন্দর দৃশ্য?",
-            "আমি দ্বিধা ছাড়াই বলে দিবো তোমার ঠোঁটের কোণে খেলতে থাকা হাসি!",
-            "যদি প্রশ্ন করো নিরাপদ আশ্রয়?",
-            "আমি নম্র চোখে তাকিয়ে বলব, তোমার বুক৷",
-            "",
-            // ---- বাড়তি ভালোবাসার কথা (এখান থেকে নতুন যোগ) ----
-            "―  আরও কিছু কথা  ―",
-            "",
-            "তুমি আমার জীবনের সব, আমার প্রথম প্রেম, আমার শেষ ভালোবাসা।",
-            "তোমার হাসি আমার দিনের আলো, তোমার চোখ আমার রাতের তারা।",
-            "I love you more than all the stars in the sky, Runa.",
-            "তোমার জন্য প্রতিদিন বসন্ত, তোমার জন্য প্রতি রাত পূর্ণিমা।",
-            "ভালোবাসা বলতে যা বুঝি, তা তুমি। শুধু তুমি।",
-            "তোমার কথা ভাবলে বুকের ভেতর এক অদ্ভুত শান্তি খেলে যায়।",
-            "তুমি না থাকলে আমি হয়তো হারিয়ে যেতাম অন্ধকারে।",
-            "তুমি আমার শক্তি, আমার ঠিকানা, আমার আবাস।",
-            "Love you, Runa. Always and forever.",
-            "আমার পৃথিবী তুমি, আমার আকাশ তুমি, আমার নিঃশ্বাস তুমি।",
-            "তোমাকে পেয়েই আমি সম্পূর্ণ। তুমিই আমার সব। ❤️",
-            "",
-            "―  শুধু তুমি  ―",
-            "তুমি আমার স্বপ্ন, তুমি আমার বাস্তব।",
-            "তোমার প্রতিটি তাকানো যেন এক টুকরো কবিতা।",
-            "আমার শেষ নিঃশ্বাস পর্যন্ত শুধু তোমার নাম থাকবে।",
-            "I'll keep loving you, Runa. Today, tomorrow, and forever."
+        // ==================== 100 REASONS DATA ====================
+        const reasonsData = [
+            'কারণ, তোমাকে দেখলেই আমার মন ভালো হয়ে যায়।',
+            'কারণ, তোমার হাসিতে আমার পৃথিবীটা একটু বেশি সুন্দর লাগে।',
+            'কারণ, তোমার চোখের মায়ায় আমি বারবার হারিয়ে যাই।',
+            'কারণ, তোমার কণ্ঠে এমন এক শান্তি আছে, যা অন্য কোথাও পাই না।',
+            'কারণ, তোমার কথা ভাবলেই আমার একাকীত্ব দূর হয়ে যায়।',
+            'কারণ, তুমি আমার সাধারণ দিনগুলোকে অসাধারণ করে দাও।',
+            'কারণ, তোমার উপস্থিতি আমার কাছে একরাশ শান্তির মতো।',
+            'কারণ, তোমার সঙ্গে কথা বললে সময় কীভাবে কেটে যায় বুঝতেই পারি না।',
+            'কারণ, তোমার রাগও আমার কাছে ভালোবাসারই অন্য এক রূপ।',
+            'কারণ, তোমার অভিমান ভাঙাতে আমার ভালো লাগে।',
+            'কারণ, তোমার হাসির কারণ হতে চাই আমি।',
+            'কারণ, তোমার মন খারাপের দিনে তোমার পাশে থাকতে চাই।',
+            'কারণ, তোমার সুখ আমার নিজের সুখের মতো মনে হয়।',
+            'কারণ, তোমার চোখে আমি এক অদ্ভুত সত্যতা দেখতে পাই।',
+            'কারণ, তোমাকে হারানোর কথা ভাবলেই বুকের ভেতরটা শূন্য লাগে।',
+            'কারণ, তুমি আমার চিন্তার সবচেয়ে সুন্দর অংশ।',
+            'কারণ, দিনের শেষে আমার মনে সবচেয়ে বেশি তোমার কথাই আসে।',
+            'কারণ, তোমার সঙ্গে ভবিষ্যৎ কল্পনা করতে ভালো লাগে।',
+            'কারণ, তোমার ছোট ছোট কথাগুলোও আমার কাছে অনেক বড় হয়ে থাকে।',
+            'কারণ, তুমি আমার কাছে শুধু একজন মানুষ নও—তুমি এক অনুভূতি।',
+            'কারণ, তোমাকে দেখলে পৃথিবীর সব সুন্দর জিনিস মনে পড়ে।',
+            'কারণ, তোমার মধ্যে আমি এক অদ্ভুত মায়া খুঁজে পাই।',
+            'কারণ, তুমি আমার অস্থির মনে শান্তির মতো।',
+            'কারণ, তোমার কাছে আমি নিজেকে লুকাতে চাই না।',
+            'কারণ, তোমার সামনে আমি নিজের মতো থাকতে পারি।',
+            'কারণ, তোমার ভালোবাসা আমার কাছে খুব মূল্যবান।',
+            'কারণ, তোমার যত্ন আমাকে ভেতর থেকে ছুঁয়ে যায়।',
+            'কারণ, তোমার একটা ছোট্ট মেসেজও আমার দিন বদলে দিতে পারে।',
+            'কারণ, তোমার কথা মনে পড়লে অকারণেই হাসি পায়।',
+            'কারণ, তোমাকে ভালোবাসা আমার জীবনের সবচেয়ে সুন্দর অনুভূতিগুলোর একটি।',
+            'কারণ, তোমার চোখে তাকালে সময় থেমে গেছে বলে মনে হয়।',
+            'কারণ, তোমার হাসি আমার প্রিয় দৃশ্যগুলোর একটি।',
+            'কারণ, তোমার সঙ্গে কাটানো প্রতিটি মুহূর্ত আমার কাছে স্মৃতি হয়ে থাকে।',
+            'কারণ, তোমাকে নিয়ে ভাবতে আমার কখনো বিরক্তি আসে না।',
+            'কারণ, তোমার নামটাও আমার কাছে বিশেষ।',
+            'কারণ, তুমি আমার নিঃশব্দ ভাবনাগুলোরও সঙ্গী।',
+            'কারণ, তোমার প্রতি আমার অনুভূতি কোনো কারণ মেনে চলে না।',
+            'কারণ, তোমাকে ভালোবাসা আমার কাছে স্বাভাবিক, যেমন শ্বাস নেওয়া।',
+            'কারণ, তোমার সুখী মুখ দেখতে আমার ভালো লাগে।',
+            'কারণ, তুমি আমার হৃদয়ের খুব কাছের একজন।',
+            'কারণ, তোমার প্রতি আমার টান প্রতিদিন একটু একটু করে বেড়ে যায়।',
+            'কারণ, তুমি আমার কাছে অন্য সবার চেয়ে আলাদা।',
+            'কারণ, তোমার সঙ্গে কথা বললে মনে হয় আমি সত্যিই গুরুত্বপূর্ণ।',
+            'কারণ, তোমার অভিমানও আমার কাছে আপন লাগে।',
+            'কারণ, তোমার যত্ন নেওয়ার ইচ্ছে আমার নিজের অজান্তেই হয়।',
+            'কারণ, তোমার কষ্ট আমাকে কষ্ট দেয়।',
+            'কারণ, তোমার আনন্দ আমাকে আনন্দ দেয়।',
+            'কারণ, তুমি আমার মনকে এমনভাবে ছুঁয়ে গেছো, যা কেউ পারেনি।',
+            'কারণ, তোমার জন্য অপেক্ষা করতেও আমার ভালো লাগে।',
+            'কারণ, তোমার সঙ্গে থাকা প্রতিটি মুহূর্তকে আমি ধরে রাখতে চাই।',
+            'কারণ, তুমি আমার কাছে এক টুকরো সুন্দর পৃথিবী।',
+            'কারণ, তোমার মধ্যে আমি আমার শান্তি খুঁজে পাই।',
+            'কারণ, তোমার সঙ্গে কথা বললে মনটা হালকা হয়ে যায়।',
+            'কারণ, তুমি আমার জীবনে আসার পর অনেক কিছুই আরও সুন্দর মনে হয়।',
+            'কারণ, তোমার জন্য আমার হৃদয়ে এক বিশেষ জায়গা আছে।',
+            'কারণ, সেই জায়গাটি অন্য কারও জন্য নয়।',
+            'কারণ, তোমার কথা ভাবা আমার অভ্যাস হয়ে গেছে।',
+            'কারণ, তোমাকে মিস করাও আমার কাছে এক অদ্ভুত সুন্দর অনুভূতি।',
+            'কারণ, তোমাকে নিয়ে স্বপ্ন দেখতে ভালো লাগে।',
+            'কারণ, তোমার সঙ্গে ছোট ছোট সুখ ভাগ করে নিতে চাই।',
+            'কারণ, তোমার সঙ্গে হাসতে চাই।',
+            'কারণ, তোমার সঙ্গে নীরব থাকতেও চাই।',
+            'কারণ, তোমার পাশে বসে কোনো কথা না বলেও অনেক কিছু অনুভব করা যায়।',
+            'কারণ, তোমার উপস্থিতি কথার চেয়েও বেশি কিছু বলে।',
+            'কারণ, তোমাকে বুঝতে চাই।',
+            'কারণ, তোমার না বলা কথাগুলোও শুনতে চাই।',
+            'কারণ, তোমার খারাপ দিনগুলোতে তোমার আশ্রয় হতে চাই।',
+            'কারণ, তোমার ভালো দিনগুলোতে তোমার আনন্দের অংশ হতে চাই।',
+            'কারণ, তোমার জীবনের গল্পে আমি একটি সুন্দর অধ্যায় হতে চাই।',
+            'কারণ, তোমাকে কখনো একা অনুভব করতে দিতে চাই না।',
+            'কারণ, তুমি আমার হৃদয়ের সবচেয়ে কোমল অনুভূতি।',
+            'কারণ, তোমার কথা মনে পড়লে আমার পৃথিবীটা থেমে যায়।',
+            'কারণ, তোমাকে ভালোবাসার মধ্যে কোনো অভিনয় নেই।',
+            'কারণ, তোমার প্রতি আমার অনুভূতি খুব সত্যি।',
+            'কারণ, তোমাকে পাওয়ার ইচ্ছেটা আমার হৃদয়ের গভীর থেকে আসে।',
+            'কারণ, তোমাকে হারানোর ভয় আমাকে তোমার মূল্য বুঝিয়ে দেয়।',
+            'কারণ, তোমার সঙ্গে কাটানো সময় কখনোই যথেষ্ট মনে হয় না।',
+            'কারণ, তোমাকে যত জানি, ততই আরও বেশি ভালোবাসতে ইচ্ছে করে।',
+            'কারণ, তোমার প্রতি আমার মায়া প্রতিদিন আরও গভীর হয়।',
+            'কারণ, তুমি আমার কাছে ভালোবাসার সবচেয়ে সুন্দর সংজ্ঞা।',
+            'কারণ, তোমার চোখে তাকালে আমি নিজেকে ভুলে যাই।',
+            'কারণ, তোমার হাসি আমার মনকে ছুঁয়ে যায়।',
+            'কারণ, তোমার কথা আমার নিঃশব্দ রাতগুলোকে সঙ্গ দেয়।',
+            'কারণ, তোমাকে নিয়ে ভাবলে ভবিষ্যৎটাকে সুন্দর মনে হয়।',
+            'কারণ, তোমার সঙ্গে জীবনকে ভাগ করে নেওয়ার ইচ্ছে হয়।',
+            'কারণ, তোমার পাশে থেকে তোমাকে ভালোবাসতে চাই।',
+            'কারণ, তোমার প্রতি আমার ভালোবাসা কোনো দিনের জন্য নয়।',
+            'কারণ, তুমি আমার কাছে ক্ষণিকের অনুভূতি নও।',
+            'কারণ, তোমাকে ভালোবাসা আমার হৃদয়ের স্বাভাবিক সত্য।',
+            'কারণ, তুমি আমার কাছে অন্য সবার চেয়ে বেশি আপন।',
+            'কারণ, তুমি আমার মনে এমনভাবে জায়গা করে নিয়েছো, যেখান থেকে সরিয়ে দেওয়া সম্ভব নয়।',
+            'কারণ, তোমার নাম শুনলেই আমার মন অন্যরকম হয়ে যায়।',
+            'কারণ, তোমাকে ভালোবাসার জন্য আমার কোনো বিশেষ দিনের প্রয়োজন হয় না।',
+            'কারণ, প্রতিদিনই তোমাকে নতুন করে ভালোবাসতে পারি।',
+            'কারণ, তুমি আমার অগোছালো ভাবনাগুলোর সবচেয়ে সুন্দর অংশ।',
+            'কারণ, তোমার সঙ্গে থাকলে আমি নিজেকে সম্পূর্ণ মনে করি।',
+            'কারণ, তোমার জন্য আমার হৃদয়ে যে অনুভূতি আছে, তা ভাষায় পুরোপুরি বলা যায় না।',
+            'কারণ, তুমি রুনা—আর তোমার মতো তুমি একটাই।',
+            'কারণ, তোমাকে ভালোবাসি—আর সত্যিকারের ভালোবাসার জন্য সবসময় কোনো কারণের প্রয়োজন হয় না।'
         ];
 
-        let lineIndex = 0;
-        let charIndex = 0;
-        const typewriterElement = document.getElementById('typewriter');
+        // Populate 100 reasons
+        const reasonsContainer = document.getElementById('reasonsContainer');
+        reasonsData.forEach((reason, index) => {
+            const chip = document.createElement('div');
+            chip.className = 'reason-chip reveal';
+            chip.innerHTML = `<span class="chip-number">${index + 1}</span>${reason}`;
+            reasonsContainer.appendChild(chip);
+        });
 
-        function typeNextChar() {
-            if (lineIndex >= poemLines.length) {
-                // টাইপ শেষ হলে আর কিছু করি না, কার্সর ব্লিংক থাকবে
-                return;
+        // ==================== CUSTOM CURSOR ====================
+        const cursor = document.getElementById('customCursor');
+        const cursorDot = document.getElementById('cursorDot');
+        let mouseX = 0,
+            mouseY = 0;
+        let cursorX = 0,
+            cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursorDot.style.left = mouseX + 'px';
+            cursorDot.style.top = mouseY + 'px';
+        });
+
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.15;
+            cursorY += (mouseY - cursorY) * 0.15;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Heart cursor on hover over love cards
+        document.querySelectorAll('.love-card, .note-card, .proposal-box, .special-note, .reason-chip').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('heart-cursor');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('heart-cursor');
+            });
+        });
+
+        // ==================== CLICK HEART BURST ====================
+        document.addEventListener('click', (e) => {
+            const heart = document.createElement('span');
+            heart.className = 'click-heart';
+            heart.textContent = ['💖', '💕', '💗', '💝', '💘', '🌹', '✨', '💫'][Math.floor(Math.random() * 8)];
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.setProperty('--dx', (Math.random() * 80 - 40) + 'px');
+            heart.style.setProperty('--dy', (Math.random() * -80 - 20) + 'px');
+            heart.style.setProperty('--rot', (Math.random() * 60 - 30) + 'deg');
+            heart.style.fontSize = (18 + Math.random() * 30) + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1300);
+
+            // Cursor burst
+            cursor.classList.add('heart-cursor');
+            setTimeout(() => cursor.classList.remove('heart-cursor'), 700);
+        });
+
+        // ==================== CANVAS PARTICLES ====================
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const maxParticles = 55;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.reset();
+                this.y = Math.random() * canvas.height;
             }
-
-            const currentLine = poemLines[lineIndex];
-            if (charIndex < currentLine.length) {
-                const char = currentLine.charAt(charIndex);
-                if (charIndex === 0) {
-                    const span = document.createElement('span');
-                    span.className = 'line-break';
-                    // বিশেষ কিছু লাইন হাইলাইট করি
-                    if (currentLine.includes("তুমি আমার জীবনের সব") || currentLine.includes("Love you, Runa") || currentLine
-                        .includes("তুমিই আমার সব")) {
-                        span.className = 'line-break love-highlight';
-                    } else if (currentLine.includes("―")) {
-                        span.className = 'line-break highlight';
-                    }
-                    span.textContent = char;
-                    typewriterElement.appendChild(span);
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = -20;
+                this.size = Math.random() * 3 + 1;
+                this.speed = Math.random() * 0.6 + 0.2;
+                this.opacity = Math.random() * 0.6 + 0.2;
+                this.wobble = Math.random() * 2 - 1;
+                this.wobbleSpeed = Math.random() * 0.01;
+                this.type = Math.random() > 0.7 ? 'heart' : 'petal';
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotSpeed = (Math.random() - 0.5) * 0.02;
+            }
+            update() {
+                this.y += this.speed;
+                this.x += Math.sin(this.y * this.wobbleSpeed) * this.wobble;
+                this.rotation += this.rotSpeed;
+                if (this.y > canvas.height + 30) {
+                    this.reset();
+                    this.y = -20;
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                if (this.type === 'heart') {
+                    const s = this.size * 3;
+                    ctx.fillStyle = `rgba(224,123,140,${this.opacity})`;
+                    ctx.beginPath();
+                    ctx.moveTo(0, s * 0.3);
+                    ctx.bezierCurveTo(-s * 0.5, -s * 0.3, -s, s * 0.4, 0, s * 1.2);
+                    ctx.bezierCurveTo(s, s * 0.4, s * 0.5, -s * 0.3, 0, s * 0.3);
+                    ctx.fill();
                 } else {
-                    const lastChild = typewriterElement.lastChild;
-                    if (lastChild) {
-                        lastChild.textContent += char;
-                    }
+                    ctx.fillStyle = `rgba(212,167,116,${this.opacity})`;
+                    ctx.beginPath();
+                    ctx.arc(0, 0, this.size, 0, Math.PI * 2);
+                    ctx.fill();
                 }
-                charIndex++;
-                // এলোমেলো টাইপ স্পিড (প্রাকৃতিক লাগবে)
-                const speed = Math.random() * 25 + 25;
-                setTimeout(typeNextChar, speed);
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < maxParticles; i++) {
+            const p = new Particle();
+            p.y = Math.random() * canvas.height;
+            particles.push(p);
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // ==================== SCROLL REVEAL ====================
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Also observe reason chips after they're added
+        setTimeout(() => {
+            document.querySelectorAll('.reason-chip.reveal').forEach(el => observer.observe(el));
+        }, 100);
+
+        // ==================== MUSIC TOGGLE ====================
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        let isMusicPlaying = false;
+
+        // Try to play on first interaction
+        function tryPlayMusic() {
+            if (!isMusicPlaying) {
+                bgMusic.volume = 0.3;
+                bgMusic.play().then(() => {
+                    isMusicPlaying = true;
+                    musicToggle.classList.add('playing');
+                    musicToggle.textContent = '🎵';
+                }).catch(() => {
+                    // Autoplay blocked
+                    musicToggle.classList.remove('playing');
+                    musicToggle.textContent = '🔇';
+                });
+            }
+        }
+
+        document.addEventListener('click', tryPlayMusic, { once: true });
+
+        musicToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                isMusicPlaying = false;
+                musicToggle.classList.remove('playing');
+                musicToggle.textContent = '🔇';
             } else {
-                // লাইন শেষ, পরের লাইনে যাই
-                lineIndex++;
-                charIndex = 0;
-                // খালি লাইন হলে ব্রেক যোগ করি
-                if (lineIndex < poemLines.length && poemLines[lineIndex] === '') {
-                    const br = document.createElement('span');
-                    br.className = 'line-break';
-                    br.textContent = '\u00A0';
-                    typewriterElement.appendChild(br);
-                    lineIndex++;
+                bgMusic.play().then(() => {
+                    isMusicPlaying = true;
+                    musicToggle.classList.add('playing');
+                    musicToggle.textContent = '🎵';
+                }).catch(() => {});
+            }
+        });
+
+        // ==================== SMOOTH SCROLL FOR NAV ====================
+        document.querySelectorAll('.nav-dot[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
-                setTimeout(typeNextChar, 400);
-            }
-        }
-
-        // পেইজ লোড হলে টাইপিং শুরু
-        window.addEventListener('load', () => {
-            setTimeout(typeNextChar, 600);
+            });
         });
 
-        // ==========================================================
-        //  ৪. হার্ট এক্সপ্লোশন (চোখে ক্লিক করলে)
-        // ==========================================================
-        function createHeartExplosion(x, y) {
-            const emojis = ['❤️', '💙', '💖', '💕', '✨', '💗', '♥️', '🌹'];
-            const count = 35;
-            for (let i = 0; i < count; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'explosion-heart';
-                heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-                const angle = Math.random() * 2 * Math.PI;
-                const distance = 80 + Math.random() * 200;
-                const tx = Math.cos(angle) * distance;
-                const ty = Math.sin(angle) * distance - 80;
-                heart.style.left = (x - 16) + 'px';
-                heart.style.top = (y - 16) + 'px';
-                heart.style.setProperty('--tx', tx + 'px');
-                heart.style.setProperty('--ty', ty + 'px');
-                heart.style.fontSize = (Math.random() * 30 + 16) + 'px';
-                document.body.appendChild(heart);
-                setTimeout(() => heart.remove(), 1300);
-            }
-        }
-
-        document.getElementById('eyeWrapper').addEventListener('click', function(e) {
-            const rect = this.getBoundingClientRect();
-            const cx = rect.left + rect.width / 2;
-            const cy = rect.top + rect.height / 2;
-            createHeartExplosion(cx, cy);
-            // ছবিতে ছোট অ্যানিমেশন
-            const img = document.getElementById('eyeImage');
-            img.style.transform = 'scale(0.90)';
-            setTimeout(() => img.style.transform = 'scale(1)', 250);
-        });
-
-        console.log('💖 Love You, Runaa! 💖');
+        // ==================== INITIAL REVEAL ====================
+        // Trigger reveal for elements already in view on load
+        setTimeout(() => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        }, 300);
+        
+        console.log('🌹 তুমি বিশেষ, রুনা। খুব বিশেষ।');
     </script>
-
 </body>
 </html>
