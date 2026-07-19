@@ -733,6 +733,25 @@
             <p style="color:var(--text-light);font-size:1rem;max-width:500px;margin:0 auto;">
                 আমার হাসি, আমার স্বপ্ন, আমার ভবিষ্যৎ—<br>সবকিছুর মাঝেই তুমি আছো
             </p>
+            <!-- রুনার ছবি (অ্যাডভান্সড) -->
+<div style="margin-top: 40px; display: flex; justify-content: center; align-items: center;">
+    <div style="position: relative; display: inline-block;">
+        <!-- গ্লো ইফেক্ট রিং -->
+        <div style="position: absolute; inset: -15px; border-radius: 50%; 
+                    background: radial-gradient(circle, rgba(199,91,110,0.4) 0%, transparent 70%); 
+                    animation: glowPulse 2.5s ease-in-out infinite; z-index: 0;"></div>
+        <!-- ছবি -->
+        <img src="eyes.png" alt="রুনার মায়াবী চোখ" 
+             style="position: relative; z-index: 1; width: 200px; height: 200px; 
+                    object-fit: cover; border-radius: 50%; 
+                    border: 4px solid rgba(212,167,116,0.7); 
+                    box-shadow: 0 0 60px rgba(199,91,110,0.5), 0 0 100px rgba(212,167,116,0.2); 
+                    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); 
+                    animation: fadeInUp 1.8s ease-out;"
+             onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 90px rgba(224,123,140,0.8), 0 0 140px rgba(212,167,116,0.5)';"
+             onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 60px rgba(199,91,110,0.5), 0 0 100px rgba(212,167,116,0.2)';">
+    </div>
+</div>
         </div>
     </section>
 
